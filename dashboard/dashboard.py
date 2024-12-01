@@ -4,6 +4,8 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import pandas as pd
 import base64
+import os
+
 
 def main():
     st.markdown(
@@ -104,10 +106,13 @@ def main():
     This dashboard provides an overview of customer segmentation and transaction analysis using a combination of RFM (Recency, Frequency, Monetary) analysis and value-based clustering. By analyzing transactional data, the dashboard categorizes customers into actionable segments, helping businesses tailor their marketing strategies and optimize customer engagement.
     """)
     
-    # Load your data
-    segment_analysis = pd.read_csv('segment_analysis.csv')
-    rfm_df = pd.read_csv('rfm_df.csv')
-    segment_distribution = pd.read_csv('segment_distribution.csv')
+    # Get the directory of the current script
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Read the CSV files
+    segment_analysis = pd.read_csv(os.path.join(current_dir, 'segment_analysis.csv'))
+    rfm_df = pd.read_csv(os.path.join(current_dir, 'rfm_df.csv'))
+    segment_distribution = pd.read_csv(os.path.join(current_dir, 'segment_distribution.csv'))
     
     # Create tabs for different visualizations
     tab1, tab2, tab3, tab4 = st.tabs(["Distribution Analysis", "Segment Comparison", "Metric Relationships", "Clustering"])
