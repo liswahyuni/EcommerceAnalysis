@@ -106,6 +106,7 @@ def main():
     This dashboard provides an overview of customer segmentation and transaction analysis using a combination of RFM (Recency, Frequency, Monetary) analysis and value-based clustering. By analyzing transactional data, the dashboard categorizes customers into actionable segments, helping businesses tailor their marketing strategies and optimize customer engagement.
     """)
     
+<<<<<<< HEAD
     # Get the directory of the current script
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -113,6 +114,12 @@ def main():
     segment_analysis = pd.read_csv(os.path.join(current_dir, 'segment_analysis.csv'))
     rfm_df = pd.read_csv(os.path.join(current_dir, 'rfm_df.csv'))
     segment_distribution = pd.read_csv(os.path.join(current_dir, 'segment_distribution.csv'))
+=======
+    # Load your data
+    segment_analysis = pd.read_csv('/workspaces/EcommerceAnalysis/dashboard/segment_analysis.csv')
+    rfm_df = pd.read_csv('/workspaces/EcommerceAnalysis/dashboard/rfm_df.csv')
+    segment_distribution = pd.read_csv('/workspaces/EcommerceAnalysis/dashboard/segment_distribution.csv')
+>>>>>>> 2b5a3e85fc2989f66ed0d58370726aeab9666d84
     
     # Create tabs for different visualizations
     tab1, tab2, tab3, tab4 = st.tabs(["Distribution Analysis", "Segment Comparison", "Metric Relationships", "Clustering"])
