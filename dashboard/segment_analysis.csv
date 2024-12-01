@@ -1,0 +1,25 @@
+Segment,Metric,Mean,Median,Skewness,Distribution,Recommended_Value
+Lost Big Spenders,recency,416.41,398.0,0.58,Skewed (use median),398.0
+Lost Big Spenders,frequency,1.03,1.0,5.92,Skewed (use median),1.0
+Lost Big Spenders,monetary,261.45,177.56,9.53,Skewed (use median),177.56
+Lost Customers,recency,417.92,402.0,0.52,Skewed (use median),402.0
+Lost Customers,frequency,1.03,1.0,5.74,Skewed (use median),1.0
+Lost Customers,monetary,62.57,62.29,0.07,Approximately Symmetric (use mean),62.57
+Big Spenders,recency,162.54,165.0,-0.05,Approximately Symmetric (use mean),162.54
+Big Spenders,frequency,1.02,1.0,6.73,Skewed (use median),1.0
+Big Spenders,monetary,258.12,176.56,6.38,Skewed (use median),176.56
+Recent Customers,recency,163.17,166.0,-0.08,Approximately Symmetric (use mean),163.17
+Recent Customers,frequency,1.02,1.0,6.59,Skewed (use median),1.0
+Recent Customers,monetary,62.13,61.69,0.09,Approximately Symmetric (use mean),62.13
+Lost Champions,recency,436.27,435.0,0.18,Approximately Symmetric (use mean),436.27
+Lost Champions,frequency,5.15,3.0,3.08,Skewed (use median),3.0
+Lost Champions,monetary,227.1,163.78,3.37,Skewed (use median),163.78
+Loyal Customers,recency,172.65,176.0,-0.2,Approximately Symmetric (use mean),172.65
+Loyal Customers,frequency,4.1,3.0,3.13,Skewed (use median),3.0
+Loyal Customers,monetary,63.23,63.01,0.05,Approximately Symmetric (use mean),63.23
+Champions,recency,152.81,150.0,0.13,Approximately Symmetric (use mean),152.81
+Champions,frequency,4.41,4.0,2.09,Skewed (use median),4.0
+Champions,monetary,249.07,181.79,3.1,Skewed (use median),181.79
+Lost Loyal,recency,434.18,420.0,0.46,Approximately Symmetric (use mean),434.18
+Lost Loyal,frequency,4.56,3.0,3.9,Skewed (use median),3.0
+Lost Loyal,monetary,63.79,63.42,-0.05,Approximately Symmetric (use mean),63.79
