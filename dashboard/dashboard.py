@@ -105,9 +105,9 @@ def main():
     """)
     
     # Load your data
-    segment_analysis = pd.read_csv('segment_analysis.csv')
-    rfm_df = pd.read_csv('rfm_df.csv')
-    segment_distribution = pd.read_csv('segment_distribution.csv')
+    segment_analysis = pd.read_csv('/workspaces/EcommerceAnalysis/dashboard/segment_analysis.csv')
+    rfm_df = pd.read_csv('/workspaces/EcommerceAnalysis/dashboard/rfm_df.csv')
+    segment_distribution = pd.read_csv('/workspaces/EcommerceAnalysis/dashboard/segment_distribution.csv')
     
     # Create tabs for different visualizations
     tab1, tab2, tab3, tab4 = st.tabs(["Distribution Analysis", "Segment Comparison", "Metric Relationships", "Clustering"])
