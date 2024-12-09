@@ -135,6 +135,20 @@ def main():
         - Higher values indicate better performance (except for recency)
         """)
         create_segment_comparison(segment_analysis)
+        
+        st.write("""
+        ### Purchasing Patterns Based on Recency, Frequency, and Monetary
+        - Recency (as shown in the first graph) indicates that customers who make purchases more frequently (such as segments like Big Spenders and Loyal Customers) tend to have lower recency values, meaning they have recently made transactions. This is an indicator that they are active customers with high potential for retention.
+        - Frequency (second graph) shows that customers who transact more often are typically found in segments such as Champions, Loyal Customers, Lost Loyal, and Lost Champions. Customers in these segments have higher purchase frequencies, reflecting their loyalty to the brand or product.
+        - Monetary (third graph) highlights that the Champions and Big Spenders segments have higher total spending, indicating that these customers contribute the most to the company's revenue. Meanwhile, Lost Customers and Recent Customers tend to spend less.         
+            """)
+
+        st.write("""
+        ### Implications for Pricing Strategy
+        - Discount Strategy for Recent Customers and Lost Customers: Customers who have recently made purchases or have lost interest (like Recent Customers and Lost Customers) may be more price-sensitive. Offering discounts or special promotions can help attract them back, encourage more purchases, and extend their customer lifecycle.
+        - Premium Pricing for Champions: For proven big spenders and loyal customers (like Champions), a premium pricing strategy (where products or services are priced higher than similar items in the market to create a perception of higher value) could be implemented. These customers are likely to value product quality over price and may tolerate higher prices more readily.
+        - Retention for High Recency Segments: Loyal customers with frequent transactions could be incentivized through loyalty programs or competitive pricing, coupled with enhanced services, to retain them for longer periods.
+        """)         
     
     with tab3:
         st.write("""
@@ -147,22 +161,85 @@ def main():
         """)
         create_scatter_matrix(rfm_df)
 
+        st.write("""
+        ### Correlation Analysis
+        The correlation analysis shows the correlation between RFM metrics:
+        - Spearman's correlation is used to measure the strength of the relationship between two variables.
+        - The higher the correlation, the stronger the relationship.
+        - The correlation coefficient ranges from -1 to 1, with 1 representing a perfect positive correlation, -1 representing a perfect negative correlation, and 0 representing no correlation.
+        """)
+
+        st.write("""
+        ### RFM Relationship Across Segments
+        - Recency vs Frequency:
+        Champions and Loyal Customers tend to have high frequency.
+        Lost Big Spenders and Lost Customers show lower frequency, indicating inactivity.
+        - Recency vs Monetary:
+        Champions and Big Spenders tend to have high monetary values, indicating frequent large purchases.
+        - Frequency vs Monetary:
+        Segments like Champions and Big Spenders exhibit both high frequency and high monetary values.
+        """)
+
+        st.write("""
+        ### Suggestions for Pricing Strategy
+        - Customers who frequently transact and have high spending contribute significantly to revenue and should be retained through premium pricing strategies and loyalty programs.
+        - New or inactive customers should be given attention through more attractive pricing approaches, such as discounts or special offers, to encourage them to make purchases more frequently.
+        - Flexible and segmentation-based pricing strategies are essential to maximize revenue and retain high-value customers.     
+        """)
+
     with tab4:
         st.write("""
         ### Clustering Explanation
-Clustering Logic: The clustering process categorizes transactions into three distinct value-based segments based on the transaction value:
+        Clustering Logic: The clustering process categorizes transactions into three distinct value-based segments based on the transaction value:
 
-1. Low-Value Segment (< 50): This segment represents customers with low transaction amounts. They may be occasional or less engaged buyers.
+        1. Low-Value Segment (< 50): This segment represents customers with low transaction amounts. They may be occasional or less engaged buyers.
 
-2. Mid-Value Segment (50 to 200): These customers make moderate-value purchases, representing a stable and reliable customer base.
+        2. Mid-Value Segment (50 to 200): These customers make moderate-value purchases, representing a stable and reliable customer base.
 
-3. High-Value Segment (> 200): These are premium customers contributing the highest transaction amounts. They are likely highly engaged and valuable to the business.
+        3. High-Value Segment (> 200): These are premium customers contributing the highest transaction amounts. They are likely highly engaged and valuable to the business.
         """)
     
         # Generate and display the donut chart
         fig = plot_donut_plotly(segment_distribution)
         st.plotly_chart(fig, use_container_width=True)
 
+        st.write("""
+        ### Implications for Pricing Strategy
+        a) **Strategy for Mid-Value Segment (59.92%):**  
+        - Maintain a pricing "sweet spot" around Rp 99.99 (median).  
+        - Implement bundling programs to encourage purchases in the Rp 100,000 - 150,000 range.  
+        - Create loyalty programs with rewards around the median value to promote repeat purchases.  
+        - Focus on a strong value proposition to maintain the dominance of this segment.  
+
+        b) **Strategy for Low-Value Segment (29.91%):**  
+        - Apply "price anchoring" by showcasing mid-value products as comparisons.  
+        - Create bundled packages with psychological pricing (e.g., Rp 49.99) to encourage upgrades to mid-value.  
+        - Offer free shipping incentives for purchases over Rp 50,000.  
+        - Focus on purchase volume and frequency to compensate for smaller margins.  
+
+        c) **Strategy for High-Value Segment (10.18%):**  
+        - Develop premium product lines with higher margins.  
+        - Offer exclusive services (e.g., priority shipping, dedicated customer support).  
+        - Implement dynamic pricing for premium products.  
+        - Create an exclusive membership program with special benefits.  
+
+        ### Recommendations
+
+        a) **Pricing Optimization:**  
+        - Set psychological pricing around Rp 99.99 for mid-value products.  
+        - Establish clear pricing tiers: < Rp 50,000, Rp 50,000-200,000, > Rp 200,000.  
+        - Apply surge pricing during peak demand periods.  
+
+        b) **Loyalty Programs:**  
+        - Design rewards based on transaction value tiers.  
+        - Provide incentives for upgrading to higher tiers.  
+        - Introduce milestone rewards to encourage higher transaction values.  
+
+        c) **Promotion Strategy:**  
+        - Align promotion types with the characteristics of each segment.  
+        - Focus on value upgrades for the low-value segment.  
+        - Offer exclusive early access for the high-value segment.  
+        """)
 
 # Function to prepare segment data for comparison
 def prepare_segment_data(segment_analysis):
